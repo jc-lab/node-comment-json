@@ -15,7 +15,8 @@ const {
 
 const tokenize = code => esprima.tokenize(code, {
   comment: true,
-  loc: true
+  loc: true,
+  range: true
 })
 
 const previous_hosts = []
@@ -357,7 +358,9 @@ const parse = (code, rev, no_comments) => {
 
   parse_comments(PREFIX_AFTER_ALL)
 
-  if (current) {
+  let endofitem = current;
+
+  if (current && current.type !== 'Punctuator') {
     unexpected()
   }
 
@@ -381,7 +384,10 @@ const parse = (code, rev, no_comments) => {
 
   free()
 
-  return result
+  return {
+    output: result,
+    next: endofitem ? endofitem.range[0] : false
+  }
 }
 
 module.exports = {

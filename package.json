@@ -1,11 +1,11 @@
 {
-  "name": "comment-json",
+  "name": "one-json",
   "version": "2.2.0",
-  "description": "Parse and stringify JSON with comments. It will retain comments even after saved!",
+  "description": "Parse and stringify JSON just one (and support comments).",
   "main": "src/index.js",
   "scripts": {
-    "test": "NODE_DEBUG=comment-json nyc ava --timeout=10s --verbose",
-    "test:dev": "NODE_DEBUG=comment-json nyc ava --timeout=10s --verbose && npm run report:dev",
+    "test": "NODE_DEBUG=one-json nyc ava --timeout=10s --verbose",
+    "test:dev": "NODE_DEBUG=one-json nyc ava --timeout=10s --verbose && npm run report:dev",
     "lint": "eslint .",
     "fix": "eslint . --fix",
     "posttest": "npm run report",
@@ -18,9 +18,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/kaelzhang/node-comment-json.git"
+    "url": "https://github.com/jc-lab/node-comment-json.git"
   },
   "keywords": [
+    "one-json",
+    "single-json",
     "comment-json",
     "comments",
     "annotations",
@@ -40,10 +42,10 @@
       "test/*.test.js"
     ]
   },
-  "author": "kaelzhang",
+  "author": "Joseph (initial author: kaelzhang)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kaelzhang/node-comment-json/issues"
+    "url": "https://github.com/jc-lab/node-comment-json/issues"
   },
   "devDependencies": {
     "@ostai/eslint-config": "^3.2.0",
